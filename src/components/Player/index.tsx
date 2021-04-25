@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import { useContext, useRef, useEffect, useState } from 'react';
-import { PlayerContext } from '../../contexts/PlayerContext';
+import { useRef, useEffect, useState } from 'react';
+import { usePlayer } from '../../contexts/PlayerContext';
 
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
@@ -29,7 +29,7 @@ export default function Player() {
         toggleShuffle,
         clearPlayerState
 
-    } = useContext(PlayerContext);
+    } = usePlayer();
 
     const episode = episodeList[currentEpisodeIndex]
 
