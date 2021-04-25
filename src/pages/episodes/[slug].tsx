@@ -28,20 +28,23 @@ type EpisodeProps = {
   episode: Episode;
 }
 
-export default function Episode({ episode }: EpisodeProps ) {
+export default function Episode({ episode }: EpisodeProps) {
   const { play } = usePlayer();
   const router = useRouter();
- 
+
   if (router.isFallback) {
     return <p>Carregando...</p>
   }
 
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>{episode.title} | Podcastr</title>
+      </Head>
       <div className={styles.thumbnailContainer}>
         <Link href="/">
           <button>
-            <img src="/arrow-left.svg" alt="Voltar"/>
+            <img src="/arrow-left.svg" alt="Voltar" />
           </button>
         </Link>
         <Image
@@ -50,8 +53,8 @@ export default function Episode({ episode }: EpisodeProps ) {
           src={episode.thumbnail}
           objectFit="cover"
         />
-        <button>
-          <img src="/play.svg" alt="Tocar episódio"/>
+        <button onClick={() => play(episode)}>
+          <img src="/play.svg" alt="Tocar episódio" />
         </button>
       </div>
 
@@ -66,8 +69,8 @@ export default function Episode({ episode }: EpisodeProps ) {
         className={styles.description}
         dangerouslySetInnerHTML={{
           __html:
-          episode.description
-        }} 
+            episode.description
+        }}
       />
     </div>
   )
@@ -90,7 +93,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     title: data.title,
     thumbnail: data.thumbnail,
     members: data.members,
-    publishedAt: format(parseISO(data.published_at), 'd MMM yy', { 
+    publishedAt: format(parseISO(data.published_at), 'd MMM yy', {
       locale: ptBR
     }),
     duration: Number(data.file.duration),
