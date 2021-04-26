@@ -2,14 +2,15 @@
   <img src="public/logo.svg" alt="Podcastr logo">
 </div>
 
-## Podcastr
+<div align="center">
+  <h2>Podcastr</h2>
+</div>
 
 <h4 align="center">
   Podcastr is a platform built for podcast broadcasting.
 </h4>
 
-<img width="1439"  src="https://user-images.githubusercontent.com/63745509/115652686-160bc980-a304-11eb-9a44-80ec88b88e80.png">
-
+<img width="1438" alt="nlw fim" src="https://user-images.githubusercontent.com/63745509/116009651-4d72c280-a5f1-11eb-9ec4-d68c7df91025.gif">
 
 Developed on the Next Level Week #05 event by [Rocketseat](https://rocketseat.com.br/)
 
